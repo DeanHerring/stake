@@ -6,6 +6,7 @@ import App from "./App.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "~/routes/Home.vue";
+import Dice from "~/routes/Dice.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -13,6 +14,10 @@ const router = createRouter({
 		{
 			path: "/",
 			component: Home,
+		},
+		{
+			path: "/dice",
+			component: Dice,
 		},
 	],
 });
