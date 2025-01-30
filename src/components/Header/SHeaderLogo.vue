@@ -1,7 +1,9 @@
 <template>
-	<div></div>
+	<div class="logo">
+		<a href="/"><img :src="stake" alt="logo" /></a>
+	</div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import stake from "~/assets/stake.svg";
 </script>
