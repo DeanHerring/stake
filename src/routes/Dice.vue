@@ -1,9 +1,9 @@
 <template>
-	<Header />
+	<stake-header></stake-header>
 
-	<main class="content w-full min-h-screen bg-grey-600">
+	<main class="content w-full min-h-screen">
 		<section class="game-wrapper">
-			<Container class="flex flex-col">
+			<stake-container class="flex flex-col">
 				<div
 					class="dice w-120 max-w-full min-h-70 bg-grey-500 mx-auto mt-5 rounded-md flex flex-col"
 				>
@@ -213,7 +213,7 @@
 						<a href="/" class="text-grey-100 ml-1">Stake Origins</a>
 					</h3>
 				</div>
-			</Container>
+			</stake-container>
 		</section>
 	</main>
 </template>
@@ -227,8 +227,8 @@ import Xmark from "~/assets/Close.svg";
 // import RollOver from "~/assets/Reload.svg";
 import stake from "~/assets/stake.svg";
 
-import Header from "~/components/Header/SHeader.vue";
-import Container from "~/components/UI/SContainer.vue";
+import StakeHeader from "~/components/Header/StakeHeader.vue";
+import StakeContainer from "~/components/UI/StakeContainer.vue";
 
 let diceValue = ref(90);
 let diceTrackRef = useTemplateRef("dice-track");

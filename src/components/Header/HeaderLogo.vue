@@ -1,5 +1,5 @@
 <template>
-	<div class="logo">
+	<div class="logo max-sm:row-start-1 max-sm:row-end-1 max-sm:col-span-1">
 		<a href="/"><img :src="stake" alt="logo" /></a>
 	</div>
 </template>

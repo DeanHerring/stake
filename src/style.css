@@ -11,6 +11,11 @@
 	height: 0;
 }
 
+body,
+html {
+	background-color: #1a2c38;
+}
+
 /* tw */
 @import "tailwindcss";
 

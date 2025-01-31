@@ -1,26 +1,26 @@
 <script setup>
-import Header from "~/components/Header/SHeader.vue";
+import StakeHeader from "~/components/Header/StakeHeader.vue";
 import OriginalGames from "~/components/Games/OriginalGames.vue";
 
-import Container from "~/components/UI/SContainer.vue";
+import StakeContainer from "~/components/UI/StakeContainer.vue";
 </script>
 
 <template>
-	<Header />
+	<stake-header></stake-header>
 
-	<main class="content w-full min-h-screen bg-grey-600">
+	<main class="content w-full min-h-screen">
 		<header class="stake-originals w-full bg-grey-500 py-4">
-			<Container>
+			<stake-container>
 				<h1 class="font-nunito font-bold text-3xl text-white">
 					Stake Originals
 				</h1>
-			</Container>
+			</stake-container>
 		</header>
 
 		<section class="games">
-			<Container>
+			<stake-container>
 				<original-games></original-games>
-			</Container>
+			</stake-container>
 		</section>
 	</main>
 </template>
