@@ -3,7 +3,7 @@
 
 	<main class="content w-full min-h-screen bg-grey-600">
 		<section class="game-wrapper">
-			<Container>
+			<Container class="flex flex-col">
 				<div
 					class="dice w-120 max-w-full min-h-70 bg-grey-500 mx-auto mt-5 rounded-md flex flex-col"
 				>
@@ -114,8 +114,10 @@
 							</form>
 						</aside>
 						<div
-							class="grow flex flex-col justify-center bg-grey-700 rounded-tr-md p-1"
+							class="grow flex flex-col justify-between bg-grey-700 rounded-tr-md p-1"
 						>
+							<div></div>
+
 							<div class="w-8/10 mx-auto">
 								<div class="mx-2">
 									<ul
@@ -155,9 +157,61 @@
 									></div>
 								</div>
 							</div>
+
+							<div class="w-full bg-grey-500 rounded-md p-1.5">
+								<ul class="w-full grid grid-cols-3 gap-1">
+									<li v-for="n in 3">
+										<h3
+											class="font-nunito font-semibold text-grey-200"
+										>
+											Multiplier
+										</h3>
+										<div
+											class="flex items-center justify-between w-full relative"
+										>
+											<input
+												type="number"
+												:min="1.012"
+												:max="9900"
+												:value="1.012"
+												class="dice-part w-full font-nunito font-semibold text-white outline-none duration-300 focus:border-grey-200 bg-grey-700 p-[7px] rounded border-2 border-grey-400 pr-4"
+											/>
+											<img
+												:src="Xmark"
+												alt="xmark"
+												class="absolute top-1/2 right-[7px] -translate-y-1/2"
+											/>
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<footer class="dice-footer"></footer>
+					<footer
+						class="dice-footer bg-grey-700 mt-1 py-1 px-2 rounded-b-md"
+					>
+						<div class="flex items-center justify-between">
+							<div></div>
+							<div>
+								<img :src="stake" alt="stake" />
+							</div>
+							<div>
+								<span
+									class="font-nunito font-semibold text-grey-100 cursor-pointer"
+									>Fairness</span
+								>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+				<div
+					class="w-120 max-w-full bg-grey-700 rounded-md mt-2 py-2.5 px-2"
+				>
+					<h3 class="font-nunito font-semibold text-white">
+						Dice
+						<a href="/" class="text-grey-100 ml-1">Stake Origins</a>
+					</h3>
 				</div>
 			</Container>
 		</section>
@@ -166,7 +220,12 @@
 
 <script setup>
 import { onMounted, ref, useTemplateRef } from "vue";
+
 import BTC from "~/assets/BTC.svg";
+import Xmark from "~/assets/Close.svg";
+// import Percentage from "~/assets/percentage.svg";
+// import RollOver from "~/assets/Reload.svg";
+import stake from "~/assets/stake.svg";
 
 import Header from "~/components/Header/SHeader.vue";
 import Container from "~/components/UI/SContainer.vue";
