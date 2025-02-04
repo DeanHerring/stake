@@ -1,16 +1,18 @@
 <template>
 	<stake-header></stake-header>
 
-	<main class="content w-full min-h-screen">
+	<main class="content w-full min-h-screen py-5">
 		<section class="game-wrapper">
 			<stake-container class="flex flex-col">
 				<div
-					class="dice w-120 max-w-full min-h-70 bg-grey-500 mx-auto mt-5 rounded-md flex flex-col"
+					class="dice w-120 max-w-full min-h-70 bg-grey-500 mx-auto rounded-md flex flex-col max-lg:w-40"
 				>
-					<div class="dice-main flex h-full flex-1">
-						<aside class="dice-sidebar w-1/4 p-1.5 rounded-l-md">
+					<div class="dice-main flex h-full flex-1 max-lg:flex-col">
+						<aside
+							class="dice-sidebar w-1/4 p-1.5 rounded-l-md flex flex-col gap-y-1 max-lg:order-1 max-lg:w-full max-lg:p-1"
+						>
 							<div
-								class="grid grid-cols-2 bg-grey-700 rounded-full p-0.5 gap-x-0.5"
+								class="grid grid-cols-2 bg-grey-700 rounded-full p-0.5 gap-x-0.5 max-lg:order-3"
 							>
 								<button
 									class="font-nunito text-white font-semibold bg-grey-700 py-1 rounded-full duration-300 hover:bg-grey-400 cursor-pointer"
@@ -24,8 +26,8 @@
 								</button>
 							</div>
 
-							<form>
-								<div class="mt-1">
+							<form class="flex flex-col gap-y-1">
+								<div>
 									<header
 										class="flex items-center justify-between"
 									>
@@ -74,7 +76,7 @@
 									</div>
 								</div>
 
-								<div class="mt-1">
+								<div class="max-lg:order-2">
 									<header
 										class="flex items-center justify-between"
 									>
@@ -107,18 +109,18 @@
 								</div>
 
 								<button
-									class="font-nunito font-bold text-grey-700 w-full py-1.5 rounded-sm bg-green-400 mt-1 cursor-pointer duration-300 hover:bg-green-300"
+									class="font-nunito font-bold text-grey-700 w-full py-1.5 rounded-sm bg-green-400 cursor-pointer duration-300 hover:bg-green-300"
 								>
 									Bet
 								</button>
 							</form>
 						</aside>
 						<div
-							class="grow flex flex-col justify-between bg-grey-700 rounded-tr-md p-1"
+							class="grow flex flex-col justify-between bg-grey-700 rounded-tr-md p-1 max-lg:rounded-t-md max-lg:gap-12.5"
 						>
 							<div></div>
 
-							<div class="w-8/10 mx-auto">
+							<div class="w-8/10 mx-auto max-lg:w-full">
 								<div class="mx-2">
 									<ul
 										class="flex items-center justify-between"
@@ -158,11 +160,15 @@
 								</div>
 							</div>
 
-							<div class="w-full bg-grey-500 rounded-md p-1.5">
-								<ul class="w-full grid grid-cols-3 gap-1">
+							<div
+								class="w-full bg-grey-500 rounded-md p-1.5 max-lg:p-1"
+							>
+								<ul
+									class="w-full grid grid-cols-3 gap-1 max-lg:gap-0.5"
+								>
 									<li v-for="n in 3">
 										<h3
-											class="font-nunito font-semibold text-grey-200"
+											class="font-nunito font-semibold text-grey-200 max-lg:text-sm"
 										>
 											Multiplier
 										</h3>
@@ -174,12 +180,12 @@
 												:min="1.012"
 												:max="9900"
 												:value="1.012"
-												class="dice-part w-full font-nunito font-semibold text-white outline-none duration-300 focus:border-grey-200 bg-grey-700 p-[7px] rounded border-2 border-grey-400 pr-4"
+												class="dice-part w-full font-nunito font-semibold text-white outline-none duration-300 focus:border-grey-200 bg-grey-700 p-[7px] rounded border-2 border-grey-400 pr-4 max-lg:text-sm"
 											/>
 											<img
 												:src="Xmark"
 												alt="xmark"
-												class="absolute top-1/2 right-[7px] -translate-y-1/2"
+												class="absolute top-1/2 right-[7px] -translate-y-1/2 max-lg:w-2"
 											/>
 										</div>
 									</li>
@@ -188,10 +194,9 @@
 						</div>
 					</div>
 					<footer
-						class="dice-footer bg-grey-700 mt-1 py-1 px-2 rounded-b-md"
+						class="dice-footer bg-grey-700 mt-1 py-1 px-2 rounded-b-md max-lg:mt-0"
 					>
 						<div class="flex items-center justify-between">
-							<div></div>
 							<div>
 								<img :src="stake" alt="stake" />
 							</div>
@@ -206,7 +211,7 @@
 				</div>
 
 				<div
-					class="w-120 max-w-full bg-grey-700 rounded-md mt-2 py-2.5 px-2"
+					class="w-120 max-w-full mx-auto bg-grey-700 rounded-md mt-2 py-2.5 px-2"
 				>
 					<h3 class="font-nunito font-semibold text-white">
 						Dice
